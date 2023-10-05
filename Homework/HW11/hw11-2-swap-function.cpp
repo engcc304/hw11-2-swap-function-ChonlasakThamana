@@ -23,13 +23,26 @@
 
 */#include <stdio.h>
 
-// ประกาศโครงสร้าง Person เพื่อเก็บข้อมูลของคน
+// สร้างโครงสร้างข้อมูลสำหรับบันทึกชื่อและอายุของคน
 struct Person {
-    char name[50];
+    char name[100];
     int age;
 };
 
-// ฟังก์ชันสลับอายุของคน 2 คน
+// ฟังก์ชันสำหรับรับข้อมูลของคน
+void getPersonInfo(struct Person *person) {
+    printf("Name: ");
+    scanf("%s", person->name);
+    printf("Age: ");
+    scanf("%d", &person->age);
+}
+
+// ฟังก์ชันสำหรับแสดงข้อมูลของคน
+void displayPersonInfo(struct Person person) {
+    printf("Name: %s (%d)\n", person.name, person.age);
+}
+
+// ฟังก์ชันสำหรับสลับอายุของคน 2 คน
 void swapAge(struct Person *person1, struct Person *person2) {
     int temp = person1->age;
     person1->age = person2->age;
@@ -39,20 +52,25 @@ void swapAge(struct Person *person1, struct Person *person2) {
 int main() {
     struct Person personA, personB;
 
-    // รับข้อมูลคนที่ 1
+    // รับข้อมูลของคน 2 คน
     printf("Input A\n");
-    printf("Name: ");
-    scanf("%s", personA.name);
-    printf("Age: ");
-    scanf("%d", &personA.age);
+    getPersonInfo(&personA);
 
-    // รับข้อมูลคนที่ 2
     printf("Input B\n");
-    printf("Name: ");
-    scanf("%s", personB.name);
-    printf("Age: ");
-    scanf("%d", &personB.age);
+    getPersonInfo(&personB);
 
-    printf
+    // แสดงผลข้อมูลของคน 2 คนก่อนสลับอายุ
+    printf("\n** RESULT **\n");
+    displayPersonInfo(personA);
+    displayPersonInfo(personB);
 
+    // สลับอายุของคน 2 คน
+    swapAge(&personA, &personB);
 
+    // แสดงผลข้อมูลหลังจากสลับอายุ
+    printf("\n** SWAP AGE **\n");
+    displayPersonInfo(personA);
+    displayPersonInfo(personB);
+
+    return 0;
+}

@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Set 1",
+      "setup": "g++ -o a.out ./Homework/HW11/hw11-2-swap-function.cpp",
+      "run": "./a.out",
+      "input": "Yorn\r\n31\r\nThane\r\n20",
+      "output": "** RESULT **\r\nName: Yorn (31)\r\nName: Thane (20)\r\n\r\n** SWAP AGE **\r\nName: Yorn (20)\r\nName: Thane (31)",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}

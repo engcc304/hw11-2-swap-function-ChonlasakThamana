@@ -21,5 +21,38 @@
         Name: Yorn (20)
         Name: Thane (31)
 
-*/
+*/#include <stdio.h>
+
+// ประกาศโครงสร้าง Person เพื่อเก็บข้อมูลของคน
+struct Person {
+    char name[50];
+    int age;
+};
+
+// ฟังก์ชันสลับอายุของคน 2 คน
+void swapAge(struct Person *person1, struct Person *person2) {
+    int temp = person1->age;
+    person1->age = person2->age;
+    person2->age = temp;
+}
+
+int main() {
+    struct Person personA, personB;
+
+    // รับข้อมูลคนที่ 1
+    printf("Input A\n");
+    printf("Name: ");
+    scanf("%s", personA.name);
+    printf("Age: ");
+    scanf("%d", &personA.age);
+
+    // รับข้อมูลคนที่ 2
+    printf("Input B\n");
+    printf("Name: ");
+    scanf("%s", personB.name);
+    printf("Age: ");
+    scanf("%d", &personB.age);
+
+    printf
+
 
